@@ -25,6 +25,7 @@ def main():
             "archive",
             "paraphrase",
             "paraphrase-report",
+            "paraphrase-compare",
         ],
     )
     parser.add_argument("--config", default="configs/pilot.json")
@@ -72,6 +73,11 @@ def main():
                 indent=2,
             )
         )
+        return
+    if args.command == "paraphrase-compare":
+        from .paraphrase_comparison import compare
+
+        compare(json.loads(Path(args.config).read_text()))
         return
     if args.command in ("paraphrase", "paraphrase-report"):
         from . import paraphrase

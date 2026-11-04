@@ -1,0 +1,6 @@
+{
+  "first_archive": "reports/paraphrase-pilot",
+  "second_archive": "reports/paraphrase-qwen3-pilot",
+  "observed_tokens": 100,
+  "output_dir": "reports/paraphrase-comparison"
+}

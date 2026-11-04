@@ -1,0 +1,110 @@
+{
+  "config": {
+    "first_archive": "reports/paraphrase-pilot",
+    "second_archive": "reports/paraphrase-qwen3-pilot",
+    "observed_tokens": 100,
+    "output_dir": "reports/paraphrase-comparison"
+  },
+  "models": [
+    "Qwen/Qwen2.5-1.5B-Instruct",
+    "Qwen/Qwen3-4B-Instruct-2507"
+  ],
+  "source_records_hash": "4d7e011881ae2a682abbadbc4cc5cd13b4db645d09c88e1648b67fc6552e8a40",
+  "comparison_source_sha256": "f135c9ec56e3493b67f25f01294c07dd5e1fef7d323e4994ee654043bea6ae8b",
+  "input_hashes": {
+    "reports/paraphrase-pilot/run.json": "1782ae52eb5999c23aaf015dcda55a47f91be0f45d95721b6297350d73c40534",
+    "reports/paraphrase-pilot/rewrites.jsonl": "b8a2b73d5e61c20c7eb36a6e0af484ac616e882a6c54524d1d9fbb19e107d3fb",
+    "reports/paraphrase-pilot/manual_review.csv": "042d1ccc3b2866a6d8cf4a2adba0c728533094693482e9ddcf90ca2af1d1da27",
+    "reports/paraphrase-qwen3-pilot/run.json": "be72691d192a4acdbdddb1677f66b74bb6b43a8af7bc4906b2cbffeedaab4424",
+    "reports/paraphrase-qwen3-pilot/rewrites.jsonl": "debc248a06cc6088abcc1769067d5e013e5d354c60850adbc3ab4c3a162cd806",
+    "reports/paraphrase-qwen3-pilot/manual_review.csv": "88aa6a8fbe9cdd07e5775fb9f44a911cc1567a080ab3c6a3109795f32f315423"
+  },
+  "paired_metrics": [
+    {
+      "variant": "baseline",
+      "attack": "light",
+      "observed_tokens": 100,
+      "total": 5,
+      "first_eligible": 5,
+      "second_eligible": 5,
+      "common_eligible": 5,
+      "clean_hits": 0,
+      "first_hits": 0,
+      "second_hits": 0
+    },
+    {
+      "variant": "baseline",
+      "attack": "strong",
+      "observed_tokens": 100,
+      "total": 5,
+      "first_eligible": 5,
+      "second_eligible": 5,
+      "common_eligible": 5,
+      "clean_hits": 0,
+      "first_hits": 0,
+      "second_hits": 0
+    },
+    {
+      "variant": "g0.25-d1",
+      "attack": "light",
+      "observed_tokens": 100,
+      "total": 5,
+      "first_eligible": 5,
+      "second_eligible": 5,
+      "common_eligible": 5,
+      "clean_hits": 2,
+      "first_hits": 2,
+      "second_hits": 0
+    },
+    {
+      "variant": "g0.25-d1",
+      "attack": "strong",
+      "observed_tokens": 100,
+      "total": 5,
+      "first_eligible": 5,
+      "second_eligible": 5,
+      "common_eligible": 5,
+      "clean_hits": 2,
+      "first_hits": 1,
+      "second_hits": 0
+    },
+    {
+      "variant": "g0.25-d2",
+      "attack": "light",
+      "observed_tokens": 100,
+      "total": 5,
+      "first_eligible": 5,
+      "second_eligible": 5,
+      "common_eligible": 5,
+      "clean_hits": 4,
+      "first_hits": 2,
+      "second_hits": 1
+    },
+    {
+      "variant": "g0.25-d2",
+      "attack": "strong",
+      "observed_tokens": 100,
+      "total": 5,
+      "first_eligible": 4,
+      "second_eligible": 5,
+      "common_eligible": 4,
+      "clean_hits": 3,
+      "first_hits": 1,
+      "second_hits": 0
+    }
+  ],
+  "qualitative_counts": [
+    {
+      "changed_or_omitted": 20,
+      "no_clear_change": 5,
+      "refusal": 1,
+      "unclear_source": 4
+    },
+    {
+      "changed_or_omitted": 17,
+      "no_clear_change": 5,
+      "refusal": 0,
+      "unclear_source": 8
+    }
+  ]
+}
