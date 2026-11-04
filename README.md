@@ -86,12 +86,16 @@ is detected.
 
 ### ROC curves
 
-![Detection ROC curves at 200 tokens against reference continuations and unwatermarked OPT](reports/main/figures/roc.png)
+![Full-range ROC curves with upper-left zooms against reference continuations and unwatermarked OPT](reports/main/figures/roc.png)
 
-The panels vary the detection threshold against C4 reference continuations
-(left) and unwatermarked OPT outputs (right). High AUC indicates strong ranking
-separation in this sample; 100 controls per comparison cannot establish extremely
-small false-positive rates.
+Columns compare against C4 reference continuations and unwatermarked OPT outputs.
+The top row retains the full ROC scale; the bottom expands the upper-left corner
+to 0–10% false positives and 90–100% true positives. Dots mark measured threshold
+points for the two non-ideal curves. Four conditions follow the same ideal ROC
+path and are grouped explicitly, without shifting their values for visibility.
+AUC uses the full curve. High AUC indicates strong ranking separation in this
+sample; 100 controls per comparison give 1-percentage-point false-positive steps
+and cannot establish extremely small false-positive rates.
 
 [Full results, ROC curves, and uncertainty →](reports/project_report.md)
 

@@ -299,26 +299,7 @@ def plot(config):
     fig.tight_layout()
     fig.savefig(directory / "length.png", dpi=160)
     plt.close(fig)
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4))
-    for ax, control in zip(axes, ("human", "baseline")):
-        for curve in evaluated["roc_curves"]:
-            if curve["length"] == 200 and curve["deduplicate"] and curve["control"] == control:
-                ax.plot(
-                    curve["fpr"], curve["tpr"], label=f"{curve['variant']} (AUC {curve['auc']:.3f})"
-                )
-        ax.plot([0, 1], [0, 1], color="gray", linestyle="--")
-        ax.set(
-            title=f"Against {control}",
-            xlabel="False-positive rate",
-            ylabel="True-positive rate",
-            xlim=(-0.02, 1.02),
-            ylim=(-0.02, 1.02),
-        )
-        ax.legend(fontsize=8, loc="lower right")
-    fig.suptitle("200-token detection ROC (repeated pairs excluded)")
-    fig.tight_layout()
-    fig.savefig(directory / "roc.png", dpi=160)
-    plt.close(fig)
+    plot_roc_curves(evaluated["roc_curves"], directory / "roc.png")
     quality = [m for m in metrics if m["length"] == 200 and "mean_sample_perplexity" in m]
     expected = config["prompt_count"]
     if (
@@ -363,6 +344,90 @@ def plot(config):
         fig.savefig(directory / "quality.png", dpi=160)
         plt.close(fig)
     print(f"Saved figures: {directory}", flush=True)
+
+
+def plot_roc_curves(curves, target):
+    import textwrap
+
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Rectangle
+    from matplotlib.ticker import PercentFormatter
+
+    fig, axes = plt.subplots(2, 2, figsize=(11, 7.5), layout="constrained")
+    for column, (control, title) in enumerate(
+        (("human", "C4 reference continuations"), ("baseline", "Unwatermarked OPT"))
+    ):
+        selected = [
+            c for c in curves if c["length"] == 200 and c["deduplicate"] and c["control"] == control
+        ]
+        # Group only exact ideal ROC paths, never curves whose rounded AUC is 1.
+        ideal = [
+            c
+            for c in selected
+            if all(x == 0 or y == 1 for x, y in zip(c["fpr"], c["tpr"], strict=True))
+        ]
+        distinct = [c for c in selected if c not in ideal]
+        for row in range(2):
+            ax = axes[row, column]
+            for index, curve in enumerate(distinct):
+                ax.plot(
+                    curve["fpr"],
+                    curve["tpr"],
+                    color=f"C{index}",
+                    linewidth=1.8,
+                    label=f"{curve['variant']} (AUC {curve['auc']:.4f})",
+                )
+                if row == 1:
+                    points = [
+                        (x, y)
+                        for x, y in zip(curve["fpr"], curve["tpr"], strict=True)
+                        if x <= 0.1 and y >= 0.9
+                    ]
+                    ax.scatter(
+                        [x for x, _ in points],
+                        [y for _, y in points],
+                        color=f"C{index}",
+                        s=15,
+                        zorder=4,
+                    )
+            if ideal:
+                label = f"{len(ideal)} coincident curves (AUC 1.0000)\n" + textwrap.fill(
+                    ", ".join(c["variant"] for c in ideal), width=37
+                )
+                ax.plot(
+                    [0, 0, 1], [0, 1, 1], color="C2", linestyle="--", linewidth=1.8, label=label
+                )
+            ax.set(xlabel="False-positive rate", ylabel="True-positive rate")
+            ax.xaxis.set_major_formatter(PercentFormatter(1, decimals=0))
+            ax.yaxis.set_major_formatter(PercentFormatter(1, decimals=0))
+            if row == 0:
+                ax.plot([0, 1], [0, 1], color="0.65", linestyle=":", linewidth=1)
+                ax.set(title=title, xlim=(-0.02, 1.02), ylim=(-0.02, 1.02))
+                ax.add_patch(
+                    Rectangle((0, 0.9), 0.1, 0.1, fill=False, edgecolor="0.3", linewidth=1)
+                )
+                ax.annotate(
+                    "Detail below",
+                    xy=(0.05, 0.95),
+                    xytext=(0.25, 0.75),
+                    arrowprops={"arrowstyle": "->", "color": "0.3"},
+                    fontsize=9,
+                )
+                ax.legend(fontsize=8, loc="lower right")
+            else:
+                ax.set(
+                    title="Upper-left detail: expanded axes",
+                    xlim=(-0.002, 0.102),
+                    ylim=(0.898, 1.004),
+                )
+                ax.grid(alpha=0.2)
+    fig.suptitle(
+        "200-token ROC: full range and upper-left detail\n"
+        "100 passages per condition; repeated pairs excluded",
+        fontsize=12,
+    )
+    fig.savefig(target, dpi=180)
+    plt.close(fig)
 
 
 def archive(config):
