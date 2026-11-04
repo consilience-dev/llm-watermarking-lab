@@ -1,0 +1,13 @@
+{
+  "spec": {
+    "model": "facebook/opt-1.3b",
+    "model_revision": "3f5c25d0bc631cb57ac65913f76e22c2dfb61d62",
+    "dataset": "allenai/c4",
+    "dataset_revision": "1588ec454efa1a09f29cd18ddd04fe05fc8653a2",
+    "dataset_file": "realnewslike/c4-validation.00000-of-00001.json.gz",
+    "prompt_tokens": 128,
+    "completion_tokens": 200
+  },
+  "content_hash": "556d33b55ced18eb2b7edee50b4417a785916b994b62b5fd02cf9bc408929a56",
+  "count": 100
+}
