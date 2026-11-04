@@ -1,0 +1,38 @@
+{
+  "model": "facebook/opt-1.3b",
+  "model_revision": "3f5c25d0bc631cb57ac65913f76e22c2dfb61d62",
+  "oracle": "facebook/opt-2.7b",
+  "oracle_revision": "905a4b602cda5c501f1b3a2650a4152680238254",
+  "dataset": "allenai/c4",
+  "dataset_revision": "1588ec454efa1a09f29cd18ddd04fe05fc8653a2",
+  "dataset_file": "realnewslike/c4-validation.00000-of-00001.json.gz",
+  "prompt_count": 10,
+  "prompt_tokens": 128,
+  "completion_tokens": 200,
+  "lengths": [
+    25,
+    50,
+    100,
+    200
+  ],
+  "gammas": [
+    0.25,
+    0.5
+  ],
+  "deltas": [
+    1.0,
+    2.0,
+    5.0
+  ],
+  "thresholds": [
+    3.0,
+    4.0,
+    5.0
+  ],
+  "key": 15485863,
+  "seed": 20261102,
+  "device": "mps",
+  "dtype": "float16",
+  "prompts_path": "reports/pilot/prompts.jsonl",
+  "output_dir": "reports/pilot"
+}

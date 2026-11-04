@@ -1,0 +1,9 @@
+{
+  "src/watermarking/analysis.py": "4fe4f7ddae4de8bddb8e062a44b72669b6cae19e17c9ffe902f8edae29eb2d55",
+  "src/watermarking/__init__.py": "c584cbe84010d53208b471acde9119f8a2225a81dbf04f6c4da825ab1a17ecdc",
+  "src/watermarking/core.py": "402e221b8f60ee29a2ffdb3e840f905326c494dc1fd30236e7e65ddb4b588ff3",
+  "src/watermarking/cli.py": "14063d60f09534dc56aafdc28254b5ad7ecfcd95b65f8f5c03f73188531cf647",
+  "src/watermarking/pipeline.py": "8f836e1d426bf18d7beed648bb0765bcde0866d55fd934e9184f40f2808a27ea",
+  "src/watermarking/storage.py": "5abf508be8e5df912c8cd055b511e838f49fe9d113e2bdefceef6f836b804f4a",
+  "uv.lock": "aa0427394f4360e4324f473a24a54845a1e40ab0f6c6b20a56535c2d08040b69"
+}
