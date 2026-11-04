@@ -23,6 +23,8 @@ def main():
             "inspect",
             "extend",
             "archive",
+            "paraphrase",
+            "paraphrase-report",
         ],
     )
     parser.add_argument("--config", default="configs/pilot.json")
@@ -71,6 +73,16 @@ def main():
             )
         )
         return
+    if args.command in ("paraphrase", "paraphrase-report"):
+        from . import paraphrase
+
+        config = json.loads(Path(args.config).read_text())
+        if args.command == "paraphrase":
+            paraphrase.run(config)
+        else:
+            paraphrase.report(config)
+        return
+
     from .storage import load_config
 
     config = load_config(args.config)
