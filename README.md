@@ -64,10 +64,35 @@ to 3.7%. These samples do not establish negligible false-positive rates.
 The small perplexity difference at δ=1 is within estimated uncertainty and is
 not evidence of better writing. Perplexity does not measure factual accuracy.
 
+### Detection versus quality
+
 ![Detection versus conditional perplexity](reports/main/figures/quality.png)
+
+Higher bias increases mean detection strength, with a substantial perplexity
+cost at δ=5. Each point summarizes 100 completions; perplexity is an oracle-based
+fluency proxy, not a factual-accuracy score.
+
+### Detection versus text length
 
 At γ=0.25, δ=2, detection increases from 24/100 at 25 observed tokens to 73/100
 at 50, 97/100 at 100, and 100/100 at 200.
+
+![Mean detection strength versus observed text length for both green fractions](reports/main/figures/length.png)
+
+Mean z-score rises with observed length for the watermarked conditions, while
+the controls remain near zero. Each curve averages 100 passages. The dashed line
+marks the per-passage z=4 threshold; a mean above it does not imply every passage
+is detected.
+
+### ROC curves
+
+![Detection ROC curves at 200 tokens against reference continuations and unwatermarked OPT](reports/main/figures/roc.png)
+
+The panels vary the detection threshold against C4 reference continuations
+(left) and unwatermarked OPT outputs (right). High AUC indicates strong ranking
+separation in this sample; 100 controls per comparison cannot establish extremely
+small false-positive rates.
+
 [Full results, ROC curves, and uncertainty →](reports/project_report.md)
 
 ## Paraphrasing results
@@ -94,6 +119,14 @@ the complete archives retain it. The 60 attempts come from five prompt groups,
 not 60 independent prompts. Qualitative labels are model-assisted screening,
 not independent human validation. Factual changes, omissions, and ambiguous
 sources limit conclusions about meaning-preserving watermark removal.
+
+![Qwen3 follow-up detection scores before and after light and strong rewriting](reports/paraphrase-qwen3-pilot/scores.png)
+
+The Qwen3 follow-up compares each passage before and after rewriting at 100 OPT
+tokens. Points below the diagonal have lower scores after rewriting; dotted lines
+mark z=4. These points include fidelity failures and reuse only five prompt
+groups, so they do not establish general meaning-preserving attack success rates.
+
 [Comparison and review notes →](reports/paraphrase-comparison/report.md)
 
 ## Quantization: prior work and open question
