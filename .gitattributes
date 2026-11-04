@@ -1,0 +1,5 @@
+# Python's CSV writer uses CRLF record endings; keep whitespace checks on the fields.
+*.csv whitespace=trailing-space,space-before-tab,cr-at-eol
+# Generated examples preserve model formatting, including Markdown hard breaks.
+reports/*/examples.md whitespace=-blank-at-eol
+reports/*/review_packet.md whitespace=-blank-at-eol
