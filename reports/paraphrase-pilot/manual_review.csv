@@ -1,0 +1,31 @@
+prompt_id,variant,attack,meaning,notes,reviewer
+c4-validation-0,baseline,light,changed_or_omitted,Changes separate shipping costs of $1679 to shipping included in $2099; completes unfinished lab-system statement.,Model-assisted qualitative inspection; provisional
+c4-validation-0,baseline,strong,changed_or_omitted,Changes separate shipping costs of $1679 to shipping included in $2099.,Model-assisted qualitative inspection; provisional
+c4-validation-0,g0.25-d1,light,no_clear_change,Visible hardware quantities and names retained; source technical claims are already awkward and unverified.,Model-assisted qualitative inspection; provisional
+c4-validation-0,g0.25-d1,strong,unclear_source,Most technical details retained; supplies month ahead for an incomplete opening whose intended time reference is unavailable.,Model-assisted qualitative inspection; provisional
+c4-validation-0,g0.25-d2,light,changed_or_omitted,Turns quarter into quarterly; omits the final game/Andy-the-robot anecdote.,Model-assisted qualitative inspection; provisional
+c4-validation-0,g0.25-d2,strong,changed_or_omitted,"Omits conference, location, date and phone context; retains much of the unusual final anecdote.",Model-assisted qualitative inspection; provisional
+c4-validation-2,baseline,light,no_clear_change,"Main PR-knowledge, staffing and client-service claims retained; grammatical repairs and modest compression.",Model-assisted qualitative inspection; provisional
+c4-validation-2,baseline,strong,changed_or_omitted,Adds larger-agency comparison and strategic communication/relationship-management claims; omits source example.,Model-assisted qualitative inspection; provisional
+c4-validation-2,g0.25-d1,light,no_clear_change,"Government PR roles, hourly/summer employment and job-elimination account largely retained.",Model-assisted qualitative inspection; provisional
+c4-validation-2,g0.25-d1,strong,changed_or_omitted,Adds frequently circulated claim; final paragraph narrows elimination-or-reduced-hours account.,Model-assisted qualitative inspection; provisional
+c4-validation-2,g0.25-d2,light,changed_or_omitted,Omits local/state scope and statement that agencies are asked to solve problems; completes unfinished ending.,Model-assisted qualitative inspection; provisional
+c4-validation-2,g0.25-d2,strong,unclear_source,Largely retains government-mulligans account; source agency/employee assertions are incoherent and opening is repaired.,Model-assisted qualitative inspection; provisional
+c4-validation-4,baseline,light,changed_or_omitted,Makes China the recipient of reports; supplies another food for unfinished dietary qualification.,Model-assisted qualitative inspection; provisional
+c4-validation-4,baseline,strong,changed_or_omitted,Makes China the publisher of reports; invents other processed meats to complete unfinished qualification.,Model-assisted qualitative inspection; provisional
+c4-validation-4,g0.25-d1,light,changed_or_omitted,Changes licking bones to eating bones; remaining source cancer/animal claims are already incoherent.,Model-assisted qualitative inspection; provisional
+c4-validation-4,g0.25-d1,strong,changed_or_omitted,Changes raising animal numbers to overfeeding; sheep bred to be consumed becomes sheep bred to consume.,Model-assisted qualitative inspection; provisional
+c4-validation-4,g0.25-d2,light,unclear_source,Reconstructs garbled opening while retaining strange named reports; reliable semantic equivalence cannot be judged.,Model-assisted qualitative inspection; provisional
+c4-validation-4,g0.25-d2,strong,refusal,Declines to paraphrase; 49 OPT tokens. Not a meaning-preserving rewrite or successful watermark-removal example.,Model-assisted qualitative inspection; provisional
+c4-validation-6,baseline,light,changed_or_omitted,Musicians listening to you becomes listening to me; drops opening statement about ministers.,Model-assisted qualitative inspection; provisional
+c4-validation-6,baseline,strong,changed_or_omitted,Adds strategy for overcoming short-term memory and changes speaker/listener roles.,Model-assisted qualitative inspection; provisional
+c4-validation-6,g0.25-d1,light,changed_or_omitted,Omits bracketed definition of COSs and repairs wording; keeps much of the unusual source metaphor.,Model-assisted qualitative inspection; provisional
+c4-validation-6,g0.25-d1,strong,changed_or_omitted,Changes sometimes two years to several years; interprets ambiguous on the line as accessible/on court lines.,Model-assisted qualitative inspection; provisional
+c4-validation-6,g0.25-d2,light,changed_or_omitted,"Adds peace, unity and reconciliation to unfinished Mandela-era clause; changes conditional watching-down statement.",Model-assisted qualitative inspection; provisional
+c4-validation-6,g0.25-d2,strong,changed_or_omitted,Changes ANC meeting conditions; adds inclusive-government conclusion and substantially rewrites father/Mandela claim.,Model-assisted qualitative inspection; provisional
+c4-validation-7,baseline,light,changed_or_omitted,Drops up-to qualifier on $3 trillion and congressional-agreement detail; otherwise retains main budget narrative.,Model-assisted qualitative inspection; provisional
+c4-validation-7,baseline,strong,no_clear_change,"Retains principal dates, monetary figures and budget-negotiation narrative; original historical claims remain unverified.",Model-assisted qualitative inspection; provisional
+c4-validation-7,g0.25-d1,light,changed_or_omitted,Attributes Lew fiscal-policy comparison to Obama; drops at-least qualifier on $1.5 trillion and several details.,Model-assisted qualitative inspection; provisional
+c4-validation-7,g0.25-d1,strong,changed_or_omitted,Invents Obama criticism of 1965 depression; changes Lew attribution and budget claims.,Model-assisted qualitative inspection; provisional
+c4-validation-7,g0.25-d2,light,no_clear_change,"Retains principal names, quotes, 100 days, three-year term and March 31; source political claims are unverified.",Model-assisted qualitative inspection; provisional
+c4-validation-7,g0.25-d2,strong,unclear_source,Most concrete details retained; expires from term is awkward and source clean-sheet debt clause is unclear.,Model-assisted qualitative inspection; provisional

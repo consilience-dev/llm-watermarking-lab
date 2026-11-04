@@ -1,0 +1,16 @@
+{
+  "REPLAY.md": "cd69c253cd37761a1501beea6b5ace2c362a247c36f36c0ee9ac6f268003ff00",
+  "evaluation.json": "b6cf4b86ebf083220d56d5ae6d05152f0c0a7263edcf855b3d76dc6f33182849",
+  "examples.md": "05a090259cd909cd1ac47c79dbf36a33afdec37043cdeabbae6fd40cb9258ca3",
+  "failed_fp16_run.json": "ad1d1e6555970df7118bea249502d15a1b47bfd0b1538d1b85137bcf3a2c7d96",
+  "generation_settings.json": "4adc688c9e1d82c736fda9c329925c6b698c7a5f93f584d84a7f1701a011cae6",
+  "interpretation.md": "ea04b9468b635908c66c14644cd14f917d3d8cd5601d2f62921072a8cb8af39d",
+  "manual_review.csv": "042d1ccc3b2866a6d8cf4a2adba0c728533094693482e9ddcf90ca2af1d1da27",
+  "metrics.csv": "9a785ceb41c5ca374bd97d75f65ff8e75ff156336c640591556a807064a9fe3f",
+  "provenance.json": "12d79943fbd925ec4a096633f28a450f2e16c9fa54a238e7119e075ade49a973",
+  "replay.json": "4459381c37b8eafd3c67a025ef68b2058daa34007fef3de904687afe60eed2c7",
+  "report.md": "82dc24c71b9604a33826ea84c5e52980423b51feef462a6276e5ab89efa7238c",
+  "rewrites.jsonl": "b8a2b73d5e61c20c7eb36a6e0af484ac616e882a6c54524d1d9fbb19e107d3fb",
+  "run.json": "1782ae52eb5999c23aaf015dcda55a47f91be0f45d95721b6297350d73c40534",
+  "scores.png": "0d726cb2c7fde4f1fbfe7b02b4280d7f8f808a8d3533bd805bb68385c6221511"
+}

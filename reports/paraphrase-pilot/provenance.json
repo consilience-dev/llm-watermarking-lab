@@ -1,0 +1,6 @@
+{
+  "execution_commit": "7e63998a7606e2504302c5f485b075c989902b7f",
+  "generation_seconds": 181.23974920925684,
+  "rewrites": 30,
+  "failed_fp16_attempt": "Invalid sampling probabilities before any output was saved. Retained manifest: failed_fp16_run.json."
+}
