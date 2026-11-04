@@ -26,6 +26,7 @@ def main():
             "paraphrase",
             "paraphrase-report",
             "paraphrase-compare",
+            "quality-uncertainty",
         ],
     )
     parser.add_argument("--config", default="configs/pilot.json")
@@ -73,6 +74,11 @@ def main():
                 indent=2,
             )
         )
+        return
+    if args.command == "quality-uncertainty":
+        from .quality_uncertainty import evaluate
+
+        evaluate(json.loads(Path(args.config).read_text()))
         return
     if args.command == "paraphrase-compare":
         from .paraphrase_comparison import compare

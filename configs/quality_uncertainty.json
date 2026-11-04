@@ -1,0 +1,6 @@
+{
+  "source_config": "reports/main/replay.json",
+  "resamples": 20000,
+  "seed": 20261104,
+  "output_dir": "reports/quality-uncertainty"
+}

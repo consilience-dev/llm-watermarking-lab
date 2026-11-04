@@ -1,0 +1,139 @@
+{
+  "config": {
+    "source_config": "reports/main/replay.json",
+    "resamples": 20000,
+    "seed": 20261104,
+    "output_dir": "reports/quality-uncertainty"
+  },
+  "environment": {
+    "python": "3.12.16",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "torch": "2.15.0",
+      "transformers": "4.57.6",
+      "numpy": "2.5.4",
+      "matplotlib": "3.11.2",
+      "datasets": "4.8.5",
+      "scipy": "1.18.1"
+    }
+  },
+  "rng": "PCG64",
+  "analysis_source_sha256": "c1820a95be179849093587c44413dd7d7f94ab1ade8b516b49371fed83348c75",
+  "input_hashes": {
+    "quality.jsonl": "eebefb73399c3ce86d976d647a2ed857cf6048476f03d0247ed19e8c96c6dca0",
+    "quality.manifest.json": "8bbd5eddaa66ba2d18b2f17549afb258a2020ba3665daf933306361083bd29c6",
+    "generations.jsonl": "e95f526309f9a1dc66dae1ed6755d6320bd5336b32d51a7da86441c09de9bb92",
+    "prompts.jsonl": "52f48f14aa9c62e031dd04ad8b018e3d304bf77aced70e975f65d166ebdee899"
+  },
+  "method": "Paired prompt bootstrap; shared prompt indices across conditions; percentile 95% intervals; post-hoc and not multiplicity-adjusted.",
+  "estimates": [
+    {
+      "variant": "g0.25-d1",
+      "count": 100,
+      "mean_nll_change": {
+        "mean_difference": 0.01704372525215149,
+        "ci95": [
+          -0.07614952585101127,
+          0.1084188469648361
+        ]
+      },
+      "mean_sample_perplexity_change": {
+        "mean_difference": -0.2657244613354619,
+        "ci95": [
+          -2.485432912443468,
+          1.9287785779025366
+        ]
+      }
+    },
+    {
+      "variant": "g0.25-d2",
+      "count": 100,
+      "mean_nll_change": {
+        "mean_difference": 0.2569878554344177,
+        "ci95": [
+          0.16032867157459257,
+          0.35495246446132656
+        ]
+      },
+      "mean_sample_perplexity_change": {
+        "mean_difference": 5.768043795988797,
+        "ci95": [
+          3.5293209271282824,
+          8.153787482825157
+        ]
+      }
+    },
+    {
+      "variant": "g0.25-d5",
+      "count": 100,
+      "mean_nll_change": {
+        "mean_difference": 1.2391132843494415,
+        "ci95": [
+          1.0796726745963097,
+          1.3904206928312777
+        ]
+      },
+      "mean_sample_perplexity_change": {
+        "mean_difference": 59.611690616027275,
+        "ci95": [
+          46.02899568457943,
+          80.53250002923694
+        ]
+      }
+    },
+    {
+      "variant": "g0.5-d1",
+      "count": 100,
+      "mean_nll_change": {
+        "mean_difference": 0.09315635561943054,
+        "ci95": [
+          -0.000882188558578491,
+          0.1849525445699691
+        ]
+      },
+      "mean_sample_perplexity_change": {
+        "mean_difference": 1.42606613388271,
+        "ci95": [
+          -0.7642919081044218,
+          3.589882470934874
+        ]
+      }
+    },
+    {
+      "variant": "g0.5-d2",
+      "count": 100,
+      "mean_nll_change": {
+        "mean_difference": 0.2805085301399231,
+        "ci95": [
+          0.18528222885727882,
+          0.37545075172185893
+        ]
+      },
+      "mean_sample_perplexity_change": {
+        "mean_difference": 6.1337954283930465,
+        "ci95": [
+          3.847549238307396,
+          8.448843737052526
+        ]
+      }
+    },
+    {
+      "variant": "g0.5-d5",
+      "count": 100,
+      "mean_nll_change": {
+        "mean_difference": 0.8051993060111999,
+        "ci95": [
+          0.6930171706378461,
+          0.9174153236150742
+        ]
+      },
+      "mean_sample_perplexity_change": {
+        "mean_difference": 23.37273520397767,
+        "ci95": [
+          19.75312427403141,
+          27.19300800587486
+        ]
+      }
+    }
+  ]
+}
